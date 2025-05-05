@@ -38,4 +38,22 @@ pipeline{
         }
         
     }
+ post{
+     success{
+         script{
+             emailext from: 'satyamsingh150720@gmail.com',
+             to: 'satyamsingh150720@gmail.com',
+             body: 'Build success for demo CICD pipeline',
+             subject: 'Build success for demo CICD pipeline'    
+         }
+     }
+     failure{
+         script{
+             emailext from: 'satyamsingh150720@gmail.com',
+             to: 'satyamsingh150720@gmail.com',
+             body: 'Build failure for demo CICD pipeline',
+             subject: 'Build failure for demo CICD pipeline'    
+         }
+     }
+ }   
 }
